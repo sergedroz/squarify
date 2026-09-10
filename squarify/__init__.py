@@ -226,8 +226,9 @@ def plot(
 
     if color is None:
         import random
-
-        cmap = plt.get_cmap()
+        from matplotlib import colormaps        
+        
+        cmap = colormaps[plt.rcParams['image.cmap']]
         color = [cmap(random.random()) for i in range(len(sizes))]
 
     if bar_kwargs is None:
